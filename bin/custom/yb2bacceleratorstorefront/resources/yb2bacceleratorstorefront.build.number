@@ -1,0 +1,9 @@
+#Ant properties
+#Fri Jan 10 11:18:57 CET 2020
+builddate=20200110 1116
+description=yb2bacceleratorstorefront
+name=yb2bacceleratorstorefront
+releasedate=20181129 1417
+vendor=hybris
+version=1811.18
+version.api=1811
