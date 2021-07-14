@@ -11,105 +11,62 @@
 -->
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
-    <collectiontypes>
-        <collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
-        <collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
-                        type="set"/>
-    </collectiontypes>
-
-    <enumtypes>
-        <enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
-            <value code="BLACK"/>
-            <value code="BLUE"/>
-            <value code="BROWN"/>
-            <value code="GREEN"/>
-            <value code="GREY"/>
-            <value code="ORANGE"/>
-            <value code="PINK"/>
-            <value code="PURPLE"/>
-            <value code="RED"/>
-            <value code="SILVER"/>
-            <value code="WHITE"/>
-            <value code="YELLOW"/>
-        </enumtype>
-    </enumtypes>
-
     <itemtypes>
 
-        <!-- Add your item definitions here -->
-
-
-        <!-- TypeGroups are for structure of this file only -->
-
-        <typegroup name="Apparel">
-            <itemtype code="ApparelProduct" extends="Product"
-                      autocreate="true" generate="true"
-                      jaloclass="my.news.core.jalo.ApparelProduct">
-                <description>Base apparel product extension that contains additional attributes.</description>
-                <attributes>
-                    <attribute qualifier="genders" type="GenderList">
-                        <description>List of genders that the ApparelProduct is designed for</description>
-                        <modifiers/>
-                        <persistence type="property"/>
-                    </attribute>
-                </attributes>
-            </itemtype>
-
-            <itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
-                      autocreate="true" generate="true"
-                      jaloclass="my.news.core.jalo.ApparelStyleVariantProduct">
-                <description>Apparel style variant type that contains additional attribute describing variant style.
-                </description>
-                <attributes>
-                    <attribute qualifier="style" type="localized:java.lang.String"
-                               metatype="VariantAttributeDescriptor">
-                        <description>Color/Pattern of the product.</description>
-                        <modifiers/>
-                        <persistence type="property"/>
-                    </attribute>
-
-                    <attribute qualifier="swatchColors" type="SwatchColorSet">
-                        <description>A normalized color mapping to a standardized front-end navigable name.
-                        </description>
-                        <modifiers/>
-                        <persistence type="property"/>
-                    </attribute>
-                </attributes>
-
-            </itemtype>
-
-            <itemtype code="ApparelSizeVariantProduct" extends="ApparelStyleVariantProduct"
-                      autocreate="true" generate="true"
-                      jaloclass="my.news.core.jalo.ApparelSizeVariantProduct">
-                <description>Apparel size variant type that contains additional attribute describing variant size.
-                </description>
-                <attributes>
-                    <attribute qualifier="size" type="localized:java.lang.String"
-                               metatype="VariantAttributeDescriptor">
-                        <description>Size of the product.</description>
-                        <modifiers/>
-                        <persistence type="property"/>
-                    </attribute>
-                </attributes>
-            </itemtype>
-        </typegroup>
-
-        <typegroup name="Electronics">
-            <itemtype code="ElectronicsColorVariantProduct" extends="VariantProduct"
-                      autocreate="true" generate="true"
-                      jaloclass="my.news.core.jalo.ElectronicsColorVariantProduct">
-                <description>Electronics color variant type that contains additional attribute describing variant color.
-                </description>
-                <attributes>
-                    <attribute qualifier="color" type="localized:java.lang.String"
-                               metatype="VariantAttributeDescriptor">
-                        <description>Color of the product.</description>
-                        <modifiers/>
-                        <persistence type="property"/>
-                    </attribute>
-                </attributes>
-            </itemtype>
-        </typegroup>
+        <itemtype code="News" autocreate="true" generate="true">
+            <description>
+                The news should have a title, picture, text, start and end date of publication,
+                products and the client for which it was published
+            </description>
+            <deployment table="News" typecode="12345"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.Integer">
+                    <description>Identifier</description>
+                    <modifiers optional="false" initial="true" unique="true" write="false"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="title" type="java.lang.String">
+                    <description>News title</description>
+                    <modifiers optional="false" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <!--Is the type correct?-->
+                <attribute qualifier="image" type="Media">
+                    <description>Main picture for news</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="text" type="java.lang.String">
+                    <description>News text</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property">
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                </attribute>
+                <attribute qualifier="startDate" type="java.util.Date">
+                    <description>Publication start date</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="endDate" type="java.util.Date">
+                    <description>Date of deletion of the publication</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="product" type="Product">
+                    <description>Product about which the news is written</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="b2bUnit" type="B2BUnit">
+                    <description>Customer who see certain news</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+            </attributes>
+        </itemtype>
 
     </itemtypes>
 </items>

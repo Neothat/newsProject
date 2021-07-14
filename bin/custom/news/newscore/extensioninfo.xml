@@ -16,6 +16,7 @@
 			extensions which are automatically required -->
 		<requires-extension name="acceleratorcms"/>
 		<requires-extension name="solrserver"/>
+		<requires-extension name="b2bcommerce"/>
 
 		<coremodule generated="true" manager="my.news.core.jalo.NewsCoreManager" packageroot="my.news.core"/>
 

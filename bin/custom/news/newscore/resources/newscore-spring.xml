@@ -154,11 +154,7 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-	<bean id="colorFacetValueProvider"
-	      class="my.news.core.search.solrfacetsearch.provider.impl.ColorFacetValueProvider"
-	       parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-	</bean>
+
 
 	<bean id="colorFacetDisplayNameProvider"
 	      class="my.news.core.search.solrfacetsearch.provider.impl.ColorFacetDisplayNameProvider"
@@ -180,11 +176,7 @@
 		<property name="pointOfServiceService" ref="pointOfServiceService"/>
 	</bean>
 
-	<bean id="genderValueProvider"
-	      class="my.news.core.search.solrfacetsearch.provider.impl.GenderValueProvider"
-	       parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-	</bean>
+
 
 	<bean id="genderFacetDisplayNameProvider"
 	      class="my.news.core.search.solrfacetsearch.provider.impl.GenderFacetDisplayNameProvider"
@@ -401,11 +393,7 @@
 		</property>
 	</bean>
 
-	<bean id="apparelSizeProductReferenceTargetStrategy"
-	      class="my.news.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
-		<property name="commerceCategoryService" ref="commerceCategoryService"/>
-		<property name="rootCategoryCode" value="categories"/>
-	</bean>
+
 
 	<!-- Sales quote process actions -->
 

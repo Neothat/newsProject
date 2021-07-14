@@ -57,6 +57,7 @@
     <extension name='odata2webservicesfeaturetests' />
     <extension name='kymaintegrationbackoffice' />
     <extension name='kymaintegrationsampledata' />
+
 	<extension name='newscore' />
     <extension name='newsfacades' />
     <extension name='newstest' />
@@ -64,5 +65,7 @@
     <extension name='newsfulfilmentprocess' />
     <extension name='newsinitialdata' />
     <extension name='newsbackoffice' />
+
+    <extension name='b2bcommerce' />
   </extensions>
 </hybrisconfig>
