@@ -7,11 +7,8 @@
     <extension name='adaptivesearchwebservices' />
     <extension name='b2bcommercebackoffice' />
     <extension name='solrfacetsearchbackoffice' />
-    <extension name='yacceleratorbackoffice' />
-    <extension name='yacceleratorinitialdata' />
-    <extension name='yacceleratorfulfilmentprocess' />
-    <extension name='ycommercewebservices' />
-    <extension name='ycommercewebservicestest' />
+    <!--<extension name='ycommercewebservices' />-->
+    <!--<extension name='ycommercewebservicestest' />-->
     <extension name='orderselfserviceaddon' />
     <extension name='powertoolsstore' />
     <extension name='solrserver' />
@@ -60,6 +57,12 @@
     <extension name='odata2webservicesfeaturetests' />
     <extension name='kymaintegrationbackoffice' />
     <extension name='kymaintegrationsampledata' />
-    <extension name='yb2bacceleratorstorefront' />
+	<extension name='newscore' />
+    <extension name='newsfacades' />
+    <extension name='newstest' />
+    <extension name='newsstorefront' />
+    <extension name='newsfulfilmentprocess' />
+    <extension name='newsinitialdata' />
+    <extension name='newsbackoffice' />
   </extensions>
 </hybrisconfig>
