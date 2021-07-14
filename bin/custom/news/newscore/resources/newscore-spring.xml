@@ -154,16 +154,6 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-
-
-	<bean id="colorFacetDisplayNameProvider"
-	      class="my.news.core.search.solrfacetsearch.provider.impl.ColorFacetDisplayNameProvider"
-	      >
-		<property name="enumerationService" ref="enumerationService"/>
-		<property name="i18nService" ref="i18nService"/>
-		<property name="commonI18NService" ref="commonI18NService"/>
-	</bean>
-
 	<bean id="apparelPointOfServiceFacetDisplayNameProvider"
 	      class="my.news.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
 	      >
@@ -383,15 +373,6 @@
 	</bean>
 
 	<!-- Product Reference Lookup Strategies-->
-	<alias name="apparelCrossSellingProductReferenceTargetStrategy" alias="crossSellingProductReferenceTargetStrategy"/>
-	<bean id="apparelCrossSellingProductReferenceTargetStrategy"
-	      parent="defaultCrossSellingProductReferenceTargetStrategy">
-		<property name="productReferenceTargetStrategies">
-			<list merge="true">
-				<ref bean="apparelSizeProductReferenceTargetStrategy"/>
-			</list>
-		</property>
-	</bean>
 
 
 

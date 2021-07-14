@@ -37,16 +37,6 @@
 		</property>
 	</bean>
 
-	<alias name="acceleratorVariantOptionDataConverter" alias="variantOptionDataConverter"/> 
-	<bean id="acceleratorVariantOptionDataConverter" parent="abstractPopulatingConverter">
-		<lookup-method name="createTarget" bean="variantOptionData"/>
-		<property name="populators">
-			<list>
-				<ref bean="acceleratorVariantOptionDataPopulator"/>
-			</list>
-		</property>
-	</bean>
-
 	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
 	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="my.news.facades.populators.AcceleratorVariantOptionDataPopulator"
 	      parent="variantOptionDataPopulator" >
@@ -61,31 +51,12 @@
 		</property>
 	</bean>
 
-
-	<alias name="acceleratorGenderConverter" alias="genderConverter"/> 
-	<bean id="acceleratorGenderConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass" value="my.news.facades.product.data.GenderData"/>
-			<property name="populators">
-				<list>
-					<ref bean="genderDataPopulator"/>
-				</list>
-			</property>
-	</bean>
-
 	<alias name="defaultGenderDataPopulator" alias="genderDataPopulator"/>
 	<bean id="defaultGenderDataPopulator" class="my.news.facades.populators.GenderDataPopulator" >
 		<property name="typeService" ref="typeService"/>
 	</bean>
 
-	<bean id="apparelProductPopulator" class="my.news.facades.populators.ApparelProductPopulator" >
-		<property name="genderConverter" ref="genderConverter"/>
-	</bean>
-
 	<!-- Add the apparelProductPopulator to the productConverter -->
-	<bean parent="modifyPopulatorList">
-		<property name="list" ref="productConverter"/>
-		<property name="add" ref="apparelProductPopulator"/>
-	</bean>
 
 	<!-- accelerator Image Format Mappings -->
 	<alias name="acceleratorImageFormatMapping" alias="imageFormatMapping"/>
@@ -188,5 +159,4 @@
 		<property name="pointOfServiceDistanceConverter" ref="pointOfServiceDistanceConverter"/>
 	</bean>
 
-	<bean id="genderData" class="my.news.facades.product.data.GenderData" scope="prototype"/>
 </beans>
