@@ -1,4 +1,5 @@
 package my.news.core.daos;
+
 import my.news.core.model.NewsModel;
 
 import java.util.List;
