@@ -13,7 +13,7 @@
 
     <itemtypes>
 
-        <itemtype code="News" autocreate="true" generate="true">
+        <itemtype code="News" autocreate="true" generate="true" jaloclass="my.news.core.jalo.News">
             <description>
                 The news should have a title, picture, text, start and end date of publication,
                 products and the client for which it was published
