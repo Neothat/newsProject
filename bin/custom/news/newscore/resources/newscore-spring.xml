@@ -19,6 +19,7 @@
            http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
      <context:annotation-config/>
+	<context:component-scan base-package="newscore"/>
 
 	<!-- Spring Integration -->
 	<import resource="classpath:/newscore/integration/hot-folder-store-electronics-spring.xml"/>
@@ -519,5 +520,15 @@
 	<bean id="defaultCSTicketStagnationAction" class="my.news.core.retention.impl.DefaultCSTicketStagnationAction" parent="abstractExtensibleRemoveCleanupAction">
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
+	</bean>
+
+	<alias name = "defaultNewsService" alias = "newsService" />
+	<bean id = "defaultNewsService" class = "my.news.core.service.impl.DefaultNewsService" >
+		<property name = "newsDao" ref = "newsDao" />
+	</bean>
+
+	<alias alias="newsDao" name="defaultNewsDao" />
+	<bean id="defaultNewsDao" class="my.news.core.daos.impl.DefaultNewsDao">
+<!--		  parent="abstractItemDao">-->
 	</bean>
 </beans>
