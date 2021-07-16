@@ -20,7 +20,7 @@
             </description>
             <deployment table="News" typecode="12345"/>
             <attributes>
-                <attribute qualifier="code" type="java.lang.Integer">
+                <attribute qualifier="code" type="java.lang.String">
                     <description>Identifier</description>
                     <modifiers optional="false" initial="true" unique="true" write="false"/>
                     <persistence type="property"/>
@@ -31,11 +31,11 @@
                     <persistence type="property"/>
                 </attribute>
                 <!--Is the type correct?-->
-                <attribute qualifier="image" type="Media">
-                    <description>Main picture for news</description>
-                    <modifiers optional="false" initial="true" />
-                    <persistence type="property" />
-                </attribute>
+<!--                <attribute qualifier="image" type="MediaContainer">-->
+<!--                    <description>Main picture for news</description>-->
+<!--                    <modifiers optional="false" initial="true" />-->
+<!--                    <persistence type="property" />-->
+<!--                </attribute>-->
                 <attribute qualifier="text" type="java.lang.String">
                     <description>News text</description>
                     <modifiers optional="false" initial="true" />
@@ -55,16 +55,16 @@
                     <modifiers optional="false" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute qualifier="product" type="Product">
-                    <description>Product about which the news is written</description>
-                    <modifiers optional="false" initial="true" />
-                    <persistence type="property" />
-                </attribute>
-                <attribute qualifier="b2bUnit" type="B2BUnit">
-                    <description>Customer who see certain news</description>
-                    <modifiers optional="false" initial="true" />
-                    <persistence type="property" />
-                </attribute>
+<!--                <attribute qualifier="product" type="Product">-->
+<!--                    <description>Product about which the news is written</description>-->
+<!--                    <modifiers optional="false" initial="true" />-->
+<!--                    <persistence type="property" />-->
+<!--                </attribute>-->
+<!--                <attribute qualifier="b2bUnit" type="B2BUnit">-->
+<!--                    <description>Customer who see certain news</description>-->
+<!--                    <modifiers optional="false" initial="true" />-->
+<!--                    <persistence type="property" />-->
+<!--                </attribute>-->
             </attributes>
         </itemtype>
 
