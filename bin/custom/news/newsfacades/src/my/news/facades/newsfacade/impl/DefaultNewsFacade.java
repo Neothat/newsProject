@@ -3,13 +3,13 @@ package my.news.facades.newsfacade.impl;
 import my.news.core.model.NewsModel;
 import my.news.core.service.NewsService;
 import my.news.facades.data.NewsData;
-import my.news.facades.newsfacade.NewsFasade;
+import my.news.facades.newsfacade.NewsFacade;
 import org.springframework.core.convert.converter.Converter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DefaultNewsFasade implements NewsFasade {
+public class DefaultNewsFacade implements NewsFacade {
 
     private NewsService newsService;
     private Converter<NewsModel, NewsData> newsConverter;
@@ -21,10 +21,6 @@ public class DefaultNewsFasade implements NewsFasade {
         }
 
         final NewsModel newsModel = newsService.getNewsForCode(code);
-
-        if (newsModel == null) {
-            return null;
-        }
 
         NewsData newsData = newsConverter.convert(newsModel);
         return newsData;
@@ -48,4 +44,5 @@ public class DefaultNewsFasade implements NewsFasade {
     public void setConverter(Converter newsConverter) {
         this.newsConverter = (Converter<NewsModel, NewsData>) newsConverter;
     }
+
 }

@@ -4,7 +4,7 @@ import my.news.facades.data.NewsData;
 
 import java.util.List;
 
-public interface NewsFasade {
+public interface NewsFacade {
     NewsData getOneNews(String code);
 
     List<NewsData> getAllNews();

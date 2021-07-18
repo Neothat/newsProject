@@ -30,12 +30,11 @@
                     <modifiers optional="false" initial="true"/>
                     <persistence type="property"/>
                 </attribute>
-                <!--Is the type correct?-->
-<!--                <attribute qualifier="image" type="MediaContainer">-->
-<!--                    <description>Main picture for news</description>-->
-<!--                    <modifiers optional="false" initial="true" />-->
-<!--                    <persistence type="property" />-->
-<!--                </attribute>-->
+                <attribute qualifier="image" type="Media">
+                    <description>Main picture for news</description>
+                    <modifiers optional="false" initial="true" />
+                    <persistence type="property" />
+                </attribute>
                 <attribute qualifier="text" type="java.lang.String">
                     <description>News text</description>
                     <modifiers optional="false" initial="true" />

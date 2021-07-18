@@ -178,7 +178,7 @@
     </bean>
 
     <bean id="newsPopulator" class="my.news.facades.populators.NewsPopulator">
-
+        <property name="mediaService" ref="mediaService"/>
     </bean>
 
     <alias alias="newsConverter" name="defaultNewsConverter"/>
@@ -192,9 +192,8 @@
     </bean>
 
     <alias name="defaultNewsFacade" alias="newsFacade"/>
-    <bean id="defaultNewsFacade" class="my.news.facades.newsfacade.impl.DefaultNewsFasade">
+    <bean id="defaultNewsFacade" class="my.news.facades.newsfacade.impl.DefaultNewsFacade">
         <property name="newsService" ref="newsService"/>
-
         <property name="converter" ref="newsConverter"/>
     </bean>
 

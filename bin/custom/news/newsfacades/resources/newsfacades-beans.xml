@@ -17,5 +17,6 @@
 		<property name="text" type="String" />
 		<property name="startDate" type="java.util.Date" />
 		<property name="endDate" type="java.util.Date" />
+		<property name="image" type="String" />
 	</bean>
 </beans>
