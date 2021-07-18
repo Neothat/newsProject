@@ -20,7 +20,7 @@ public class DefaultNewsDao implements NewsDao {
                 "SELECT {p:" + NewsModel.PK + "} "
                         + "FROM {" + NewsModel._TYPECODE + " AS p} ";
         final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-        return flexibleSearchService.<NewsModel>search(query).getResult();
+        return flexibleSearchService.searchUnique(query);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class DefaultNewsDao implements NewsDao {
                         + "WHERE " + "{p:" + NewsModel.CODE + "}=?code ";
         final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
         query.addQueryParameter("code", code);
-        return flexibleSearchService.<NewsModel>search(query).getResult();
+        return flexibleSearchService.searchUnique(query);
     }
 }
