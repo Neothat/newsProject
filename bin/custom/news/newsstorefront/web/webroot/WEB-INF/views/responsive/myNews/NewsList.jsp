@@ -13,7 +13,7 @@
 <h1>News List</h1>
 <ul>
     <c:forEach var="news" items="${news}">
-        <li><a href="./news/${news.code}"><img src="${news.image}" />${news.title}</a></li>
+        <li><a href="./allNews/${news.code}"><img src="${news.image}" />${news.title}</a></li>
     </c:forEach>
 </ul>
 </body>

@@ -11,7 +11,7 @@
 <title>News Details</title>
 <body>
 <h1>News Details</h1>
-<p><img src="${band.imageURL}"/></p>
+<p><img src="${band.image}"/></p>
 
 <h2>${news.title}</h2>
 <br/>
@@ -22,6 +22,6 @@
 <br/>
 <p>Deletion date - ${news.endDate}</p>
 <br/>
-<a href="../bands">Back to Band List</a>
+<a href="../news">Back to News List</a>
 </body>
 </html>
